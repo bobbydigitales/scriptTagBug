@@ -1,0 +1,1 @@
+globalThis.generated_value_404 = 404; console.log(globalThis.generated_value_404)

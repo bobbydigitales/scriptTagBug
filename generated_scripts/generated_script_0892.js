@@ -1,0 +1,1 @@
+globalThis.generated_value_892 = 892; console.log(globalThis.generated_value_892)

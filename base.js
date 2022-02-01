@@ -1,0 +1,1 @@
+console.log("Hello I am a script that's got some side effects");

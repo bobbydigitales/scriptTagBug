@@ -1,0 +1,1 @@
+globalThis.generated_value_768 = 768; console.log(globalThis.generated_value_768)
