@@ -16,4 +16,6 @@ for (let i= 0; i<numScripts; i++) {
     }
 }
 
-prependToBody("All variables are present!");
+let successMessage = "All variables are present!";
+prependToBody(successMessage);
+console.log(successMessage);
