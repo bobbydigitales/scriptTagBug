@@ -22,7 +22,7 @@ indexTemplate = indexTemplate.replace(
   scriptTags.join("\n")
 );
 
-Deno.writeTextFileSync("index.html", indexTemplate);
+Deno.writeTextFileSync("index_script_tags.html", indexTemplate);
 
 let checkTemplate = Deno.readTextFileSync("check_template.js");
 checkTemplate = checkTemplate.replace("INJECT_NUM_SCRIPTS_HERE", numScripts);

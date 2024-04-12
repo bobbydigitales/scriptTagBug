@@ -32,7 +32,9 @@ async function main() {
             console.log(result);
             if (high - low <= 1) {
                 limitFound = true;
-                console.log(`Limit of successful concurrent requests is around ${mid}`);
+                let message = `Limit of successful concurrent requests is around ${mid}`;
+                console.log(message);
+                document.body.innerText = message;
             }
             low = mid + 1; // Try more requests
         } else {
@@ -42,7 +44,9 @@ async function main() {
     }
 
     if (!limitFound) {
-        console.log(`Limit of successful concurrent requests is less than ${low}`);
+        let message = `Limit of successful concurrent requests is less than ${low}`;
+        console.log(message);
+        document.body.innerText = message;
     }
 }
 
