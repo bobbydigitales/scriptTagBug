@@ -1,0 +1,1 @@
+globalThis.generated_value_5000 = 5000; console.log(globalThis.generated_value_5000)

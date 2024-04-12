@@ -3,7 +3,7 @@ function prependToBody(message) {
 
 }
 
-const numScripts = 2000;
+const numScripts = 10000;
 for (let i= 0; i<numScripts; i++) {
     const variableName = `generated_value_${i}`;
     const value = globalThis[variableName];
