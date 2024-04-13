@@ -69,11 +69,9 @@ async function main() {
       log(`test took: ${((performance.now()-start)/1000).toFixed(2)} seconds`)
 
       if (result.startsWith("All resources loaded")) {
-          log(result);
           optimalLimit = mid;  // Update the optimal limit
           low = mid + 1;  // Try a lower limit
       } else {
-          log(result);
           high = mid - 1;  // Reduce the limit on encountering errors
       }
       log(' ');
