@@ -46,9 +46,13 @@ async function test(numRequests, limiter) {
 }
 
 
-function log(message) {
-  document.body.innerHTML = `${document.body.innerHTML}<br>${message}`;
+function log(message, newline=true) {
+  document.body.innerHTML = `${document.body.innerHTML}${newline?'<br>':' '}${message}`;
   console.log(message);
+}
+
+function getDeltaTime(startTime, fixed=2) {
+  return ((performance.now()-startTime)/1000).toFixed(fixed)
 }
 
 async function main() {
@@ -63,10 +67,13 @@ async function main() {
       const limiter = new RequestLimiter(mid);
 
       log(`Testing with concurrency limit: ${mid}`);
+      log('');
       const start = performance.now();
+      let progress = setInterval(()=>{log(getDeltaTime(start, 0),false)}, 1000)
       let result = await test(totalScripts, limiter);
+      clearInterval(progress);
       log(result)
-      log(`test took: ${((performance.now()-start)/1000).toFixed(2)} seconds`)
+      log(`test took: ${getDeltaTime(start)} seconds`)
 
       if (result.startsWith("All resources loaded")) {
           optimalLimit = mid;  // Update the optimal limit
